@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="modules/sea.js"></script>
+    <script>
+        seajs.use(['./modules/add.js','./modules/jian.js','./modules/yu.js'],function(addObj,jianObj,yuObj){
+            var res = addObj.add(1,2);
+            var res1 = jianObj.jian1(3,2);
+            var res2 = yuObj.yu1(3,2);
+            alert(res+' '+res1 + ' ' + res2);
+        })
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

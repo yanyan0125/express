@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="v1"/>
+<select id="sel">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type="text" id="v2"/>
+<input type="button" value="=" id="btn"/>
+<input type="text" id="result"/>
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+        var v1Obj = document.getElementById('v1');
+        var v2Obj = document.getElementById('v2');
+        var v1 = v1Obj.value;
+        var v2 = v2Obj.value;
+
+        var selObj = document.getElementById('sel');
+        var sel = selObj.value;
+
+
+        var result;
+        switch (sel){
+            case '+' :
+                result = calc.add(v1,v2)   ;
+                break;
+            case '-' :
+                result = calc.remove(v1,v2)   ;
+                break;
+            case '*' :
+                result = calc.cheng(v1,v2)   ;
+                break;
+            case '/' :
+                result = calc.devid(v1,v2)   ;
+                break;
+        }
+
+        var res = document.getElementById('result');
+        res.value = result;
+    };
+
+    var calc = {
+        add: function add(x,y){
+            return parseFloat(x) + parseFloat(y);
+        },
+        //    console.log(add(1,2))
+            remove: function remove(x,y){
+            return parseFloat(x) - parseFloat(y);
+        },
+
+            cheng: function cheng(x,y){
+            return parseFloat(x) * parseFloat(y);
+        },
+
+            devid: function devid(x,y){
+            return parseFloat(x) / parseFloat(y);
+        }
+    }
+
+</script>
+</body>
+</html>
